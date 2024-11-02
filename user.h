@@ -1,5 +1,10 @@
+#ifndef USER_H
+#define USER_H
+
 struct stat;
 struct rtcdate;
+
+typedef unsigned int uint;
 
 // system calls
 int fork(void);
@@ -37,3 +42,10 @@ void* memset(void*, int, uint);
 void* malloc(uint);
 void free(void*);
 int atoi(const char*);
+
+// bsdstr.c
+int isdigit(char c);
+long strtol(const char *nptr, char **endptr, register int base);
+char* strtok(register char *s, register const char *delim);
+
+#endif USER_H

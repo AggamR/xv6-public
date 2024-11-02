@@ -1,0 +1,18 @@
+{
+    "files.associations": {
+        "types.h": "c",
+        "cstdio": "cpp",
+        "bsd.h": "c",
+        "user.h": "c",
+        "stdarg.h": "c",
+        "compare": "cpp",
+        "type_traits": "cpp",
+        "stddef.h": "c",
+        "string.h": "c",
+        "printf.h": "c",
+        "errno.h": "c",
+        "unistd.h": "c",
+        "limits.h": "c",
+        "stat.h": "c"
+    }
+}
