@@ -69,23 +69,24 @@ main(argc, argv)
 	int ch;
 
 	struct opt optstruct;
-	optinit(&optstruct);
+	struct opt* optstructptr;
+	optinit(optstructptr);
 	
 	dchar = '\t';			/* default delimiter is \t */
 
-	while ((ch = getopt(argc, argv, "c:d:f:s")) != EOF)
+	while ((ch = getopt(argc, argv, "c:d:f:s")) != EOF) {
 		switch(ch) {
 		case 'c':
 			fcn = c_cut;
-			get_list(optstruct.optarg);
+			get_list(optstructptr->optarg);
 			cflag = 1;
 			break;
 		case 'd':
-			dchar = *(optstruct.optarg);
+			dchar = *(optstructptr->optarg);
 			dflag = 1;
 			break;
 		case 'f':
-			get_list(optstruct.optarg);
+			get_list(optstructptr->optarg);
 			fcn = f_cut;
 			fflag = 1;
 			break;
@@ -96,8 +97,10 @@ main(argc, argv)
 		default:
 			usage();
 		}
-	argc -= optstruct.optind;
-	argv += optstruct.optind;
+	}
+
+	argc -= optstructptr->optind;
+	argv += optstructptr->optind;
 
 	if (fflag) {
 		if (cflag)
@@ -112,8 +115,10 @@ main(argc, argv)
 			fcn(fp, *argv);
 			(void)fclose(fp);
 		}
-	else
+	else {
 		fcn(stdin, "stdin");
+	}
+
 	exit();
 }
 
@@ -137,7 +142,8 @@ get_list(list)
 	 * overlapping lists.  We also handle "-3-5" although there's no
 	 * real reason too.
 	 */
-	for (; p = strtok(list, ", \t"); list = NULL) {
+	// used to be ", \t"
+	for (; p = strtok(list, ","); list = NULL) {
 		setautostart = start = stop = 0;
 		if (*p == '-') {
 			++p;
@@ -188,15 +194,20 @@ c_cut(fp, fname)
 	register char *pos;
 
 	for (;;) {
+		printf(2, "");
 		pos = positions + 1;
 		for (col = maxval; col; --col) {
-			if ((ch = getc(fp)) == EOF)
+			printf(2, "");
+			ch = getc(fp);
+			printf(2, "");
+			if (ch == EOF)
 				return;
 			if (ch == '\n')
 				break;
 			if (*pos++)
 				(void)putchar(ch);
 		}
+		printf(2, "");
 		if (ch != '\n')
 			if (autostop)
 				while ((ch = getc(fp)) != EOF && ch != '\n')

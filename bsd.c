@@ -22,7 +22,7 @@ char* strerror(int err) {
 
 char getc(int fd) {
     char result;
-    fgets(fd, &result, 1);
+    fgets(&result, 1, fd);
     return result;
 }
 
