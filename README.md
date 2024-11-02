@@ -34,10 +34,25 @@ The code in the files that constitute xv6 is
 Copyright 2006-2018 Frans Kaashoek, Robert Morris, and Russ Cox.
 
 ## AGGAMR'S FORK
-New code in this fork (by Aggam Rahamim) has been added - mostly ported from other projects:
+This is my fork of XV6 - that includes ports of other systems' software to XV6 (that's the goal at least).
 
-### 4.4BSD-Lite2
-Ported commands / function from [4.4BSD-Lite2]((https://github.com/dank101/4.4BSD-Lite2/))
+My code (code that isn't original XV6 code, and isn't from another project e.g. 4.4BSD-Lite2) is licensed under The BSD 2 Clause License (node that files may not contain this license even though it applies to them - as a rule of thumb, it probably applies if no license is specified, as if it has been taken from another project - the license would be in the file):
+### The BSD 2 Clause License
+```
+Copyright 2024 Aggam Rahamim
+
+Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:
+
+1. Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.
+
+2. Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.
+
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS “AS IS” AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+```
+### Ports
+Software in this project has been ported from the following systems:
+#### 4.4BSD-Lite2
+Ported programs / functions from [4.4BSD-Lite2]((https://github.com/dank101/4.4BSD-Lite2/)):
 - getopt.c
 - cut.c
 - bsdstr.c
