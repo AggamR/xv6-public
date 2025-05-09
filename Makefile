@@ -144,6 +144,7 @@ tags: $(OBJS) entryother.S _init
 vectors.S: vectors.pl
 	./vectors.pl > vectors.S
 
+# add library files here
 ULIB = ulib.o usys.o printf.o umalloc.o bsdstr.o bsd.o getopt.o
 
 _%: %.o $(ULIB)
@@ -166,6 +167,7 @@ mkfs: mkfs.c fs.h
 # http://www.gnu.org/software/make/manual/html_node/Chained-Rules.html
 .PRECIOUS: %.o
 
+# add user programs here
 UPROGS=\
 	_cat\
 	_echo\
@@ -250,6 +252,7 @@ qemu-nox-gdb: fs.img xv6.img .gdbinit
 # rename it to rev0 or rev1 or so on and then
 # check in that version.
 
+# add files to compile here
 EXTRA=\
 	mkfs.c ulib.c user.h cat.c echo.c forktest.c grep.c kill.c\
 	ln.c ls.c mkdir.c rm.c stressfs.c usertests.c wc.c zombie.c\

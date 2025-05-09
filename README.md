@@ -36,7 +36,7 @@ Copyright 2006-2018 Frans Kaashoek, Robert Morris, and Russ Cox.
 ## AGGAMR'S FORK
 This is my fork of XV6 - that includes ports of other systems' software to XV6 (that's the goal at least).
 
-My code (code that isn't original XV6 code, and isn't from another project e.g. 4.4BSD-Lite2) is licensed under The BSD 2 Clause License (node that files may not contain this license even though it applies to them - as a rule of thumb, it probably applies if no license is specified, as if it has been taken from another project - the license would be in the file):
+My code (code that isn't original XV6 code, and isn't from another project e.g. 4.4BSD-Lite2) is licensed under The BSD 2 Clause License (noTe that files may not contain this license even though it applies to them - as a rule of thumb, it probably applies if no license is specified, as if it has been taken from another project - the license would be in the file):
 ### The BSD 2 Clause License
 ```
 Copyright 2024 Aggam Rahamim
@@ -60,7 +60,6 @@ Ported programs / functions from [4.4BSD-Lite2]((https://github.com/dank101/4.4B
 - errno.h
 
 # BUILDING AND RUNNING XV6
-
 To build xv6 on an x86 ELF machine (like Linux or FreeBSD), run
 "make". On non-x86 or non-ELF machines (like OS X, even on x86), you
 will need to install a cross-compiler gcc suite capable of producing
