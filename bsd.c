@@ -2,9 +2,22 @@
 
 #include "types.h"
 #include "user.h"
+#include "fcntl.h"
 
 int fopen(char* filename, char* options) {
-    return open(filename, options);
+    char r = 0, w = 0;
+    while (*options != 0) {
+        if (*options == 'r') r = 1;
+        if (*options == 'w') w = 1;
+    }
+    // no valid options
+    if (r + w == 0) return -1;
+
+    return open(
+        filename,
+        // fancy-ass bitwise to get int option - could do if but that'd be multiple lines
+        r && w ? O_RDWR : (r & O_RDONLY) | (w & O_WRONLY)
+    );
 }
 
 void fclose(int fd) {
